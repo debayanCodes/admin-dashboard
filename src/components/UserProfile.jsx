@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 
-import { Button } from '.';
+import Button from './Button'; // Import Button directly from its file
 import { userProfileData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
@@ -28,25 +28,25 @@ const UserProfile = () => {
           alt="user-profile"
         />
         <div>
-          <p className="font-semibold text-xl dark:text-gray-200"> Debayan Paul </p>
-          <p className="text-gray-500 text-sm dark:text-gray-400">  Administrator   </p>
-          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> info@shop.com </p>
+          <p className="font-semibold text-xl dark:text-gray-200">Debayan Paul</p>
+          <p className="text-gray-500 text-sm dark:text-gray-400">Administrator</p>
+          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400">info@shop.com</p>
         </div>
       </div>
       <div>
         {userProfileData.map((item, index) => (
-          <div key={index} className="flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer  dark:hover:bg-[#42464D]">
+          <div key={index} className="flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer dark:hover:bg-[#42464D]">
             <button
               type="button"
               style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-              className=" text-xl rounded-lg p-3 hover:bg-light-gray"
+              className="text-xl rounded-lg p-3 hover:bg-light-gray"
             >
               {item.icon}
             </button>
 
             <div>
-              <p className="font-semibold dark:text-gray-200 ">{item.title}</p>
-              <p className="text-gray-500 text-sm dark:text-gray-400"> {item.desc} </p>
+              <p className="font-semibold dark:text-gray-200">{item.title}</p>
+              <p className="text-gray-500 text-sm dark:text-gray-400">{item.desc}</p>
             </div>
           </div>
         ))}
@@ -61,7 +61,6 @@ const UserProfile = () => {
         />
       </div>
     </div>
-
   );
 };
 

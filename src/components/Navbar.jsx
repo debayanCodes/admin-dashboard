@@ -7,7 +7,10 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg';
-import { Cart, Chat, Notification, UserProfile } from '.';
+import Cart from './Cart';
+import Chat from './Chat';
+import Notification from './Notification';
+import UserProfile from './UserProfile';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
@@ -52,7 +55,6 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
-
       <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
       <div className="flex">
         <NavButton title="Cart" customFunc={() => handleClick('cart')} color={currentColor} icon={<FiShoppingCart />} />

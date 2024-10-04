@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 
-import { Button } from '.';
+import Button from './Button'; // Import Button directly from its file
 import { chatData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -13,7 +13,7 @@ const Chat = () => {
       <div className="flex justify-between items-center">
         <div className="flex gap-3">
           <p className="font-semibold text-lg dark:text-gray-200">Messages</p>
-          <button type="button" className="text-white  text-xs rounded p-1 px-2 bg-orange">
+          <button type="button" className="text-white text-xs rounded p-1 px-2 bg-orange">
             5 New
           </button>
         </div>
@@ -25,7 +25,7 @@ const Chat = () => {
           borderRadius="50%"
         />
       </div>
-      <div className="mt-5 ">
+      <div className="mt-5">
         {chatData?.map((item, index) => (
           <div key={index} className="flex items-center gap-5 border-b-1 border-color p-3 leading-8 cursor-pointer">
             <div className="relative">
@@ -40,7 +40,7 @@ const Chat = () => {
               />
             </div>
             <div>
-              <p className="font-semibold dark:text-gray-200 ">{item.message}</p>
+              <p className="font-semibold dark:text-gray-200">{item.message}</p>
               <p className="text-gray-500 dark:text-gray-400 text-sm">{item.desc}</p>
               <p className="text-gray-500 dark:text-gray-400 text-xs">{item.time}</p>
             </div>
